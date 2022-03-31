@@ -7,4 +7,5 @@ package clive.tea.milk
  *@since 1.4.1
  */
 class StartApplication {
+
 }

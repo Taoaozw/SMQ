@@ -11,5 +11,10 @@ repositories {
 }
 
 dependencies {
+    implementation(libs.kt.log)
+    implementation(libs.kotlin.coroutine)
+    implementation(libs.bundles.vertxMq)
+    implementation(libs.bundles.logback)
+    implementation(libs.bundles.jackson)
     implementation(kotlin("stdlib"))
 }
