@@ -10,6 +10,7 @@ dependencyResolutionManagement {
             version("kotlin", "1.6.20-RC2")
             version("jackson", "2.13.1")
             version("logback", "1.2.10")
+            version("ktoml", "0.2.11")
 
             library("vertx-core","io.vertx","vertx-core").versionRef("vertx")
             library("vertx-mqtt","io.vertx","vertx-mqtt").versionRef("vertx")
@@ -27,11 +28,14 @@ dependencyResolutionManagement {
 
             library("kotlin-coroutine","org.jetbrains.kotlinx","kotlinx-coroutines-core").version("1.6.0")
 
-
+            library("toml-parser-core","com.akuleshov7","ktoml-core").versionRef("ktoml")
+            library("toml-parser-file","com.akuleshov7","ktoml-file").versionRef("ktoml")
 
             bundle("vertxMq", listOf("vertx-core", "vertx-mqtt", "vertx-kt", "vertx-kt-coroutines"))
             bundle("logback", listOf("logback-core", "logback-classic"))
             bundle("jackson", listOf("jackson-core", "jackson-databind"))
+            bundle("ktoml", listOf("toml-parser-core", "toml-parser-file"))
+
 
 
         }

@@ -1,0 +1,6 @@
+#Deciding whether to enable the cluster The default value is false.
+clusterModel = false
+
+[address]
+port = 1883
+host = "127.0.0.1"

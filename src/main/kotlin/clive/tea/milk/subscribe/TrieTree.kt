@@ -1,4 +1,4 @@
-package mil.clive.mqtt.commons.topic
+package clive.tea.milk.subscribe
 
 import io.netty.handler.codec.mqtt.MqttQoS
 
@@ -9,7 +9,7 @@ import io.netty.handler.codec.mqtt.MqttQoS
  *@description
  *@since 0.0.1
  */
-class TrieTree {
+object TrieTree {
 
     private val root = SubscribeTreeNode(Token.ROOT)
 
@@ -68,16 +68,15 @@ class TrieTree {
 }
 
 fun main() {
-    val trieTree = TrieTree()
-    trieTree.addSubscriber(Subscriber("taozij", Topic("/a/b/c"), MqttQoS.AT_LEAST_ONCE))
-    println(trieTree.matchAllSubscriber(Topic("/a/b/c")){
+    TrieTree.addSubscriber(Subscriber("taozij", Topic("/a/b/c"), MqttQoS.AT_LEAST_ONCE))
+    println(TrieTree.matchAllSubscriber(Topic("/a/b/c")){
         it.forEach { su ->
             println(su)
         }
     })
-    println(trieTree)
-    trieTree.removeSubscribe(Subscriber("taozij", Topic("/a/b/c"), MqttQoS.AT_LEAST_ONCE))
-    println(trieTree.matchAllSubscriber(Topic("/a/b/c")){
+    println(TrieTree.toString())
+    TrieTree.removeSubscribe(Subscriber("taozij", Topic("/a/b/c"), MqttQoS.AT_LEAST_ONCE))
+    println(TrieTree.matchAllSubscriber(Topic("/a/b/c")){
         it.forEach { su ->
             println(su)
         }

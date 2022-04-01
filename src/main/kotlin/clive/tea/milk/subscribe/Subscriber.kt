@@ -1,4 +1,4 @@
-package mil.clive.mqtt.commons.topic
+package clive.tea.milk.subscribe
 
 import io.netty.handler.codec.mqtt.MqttQoS
 import io.vertx.core.json.JsonObject
