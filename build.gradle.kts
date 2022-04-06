@@ -3,7 +3,7 @@ plugins {
     kotlin("plugin.serialization") version "1.6.20-RC2"
 }
 
-group = "clive.tea.milk"
+group = "io.github.suda"
 version = "1.0-SNAPSHOT"
 
 repositories {

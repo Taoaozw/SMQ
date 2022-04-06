@@ -1,6 +1,4 @@
-package clive.tea.milk.subscribe
-
-import io.netty.handler.codec.mqtt.MqttQoS
+package io.github.milk.subscribe
 
 
 /**
@@ -23,8 +21,8 @@ object TrieTree {
         pointer.subscribers[subscriber.clientId] = subscriber
     }
 
-    fun removeSubscribe(subscriber: Subscriber) {
-        visitTopicTailNode(subscriber.topic)?.subscribers?.remove(subscriber.clientId)
+    fun removeSubscribe(topic: Topic, clientId: String) {
+        visitTopicTailNode(topic)?.subscribers?.remove(clientId)
     }
 
     /**
@@ -68,18 +66,18 @@ object TrieTree {
 }
 
 fun main() {
-    TrieTree.addSubscriber(Subscriber("taozij", Topic("/a/b/c"), MqttQoS.AT_LEAST_ONCE))
-    println(TrieTree.matchAllSubscriber(Topic("/a/b/c")){
-        it.forEach { su ->
-            println(su)
-        }
-    })
-    println(TrieTree.toString())
-    TrieTree.removeSubscribe(Subscriber("taozij", Topic("/a/b/c"), MqttQoS.AT_LEAST_ONCE))
-    println(TrieTree.matchAllSubscriber(Topic("/a/b/c")){
-        it.forEach { su ->
-            println(su)
-        }
-    })
+//    TrieTree.addSubscriber(Subscriber("taozij", Topic("/a/b/c"), MqttQoS.AT_LEAST_ONCE))
+//    println(TrieTree.matchAllSubscriber(Topic("/a/b/c")){
+//        it.forEach { su ->
+//            println(su)
+//        }
+//    })
+//    println(TrieTree.toString())
+//    TrieTree.removeSubscribe(Subscriber("taozij", Topic("/a/b/c"), MqttQoS.AT_LEAST_ONCE))
+//    println(TrieTree.matchAllSubscriber(Topic("/a/b/c")){
+//        it.forEach { su ->
+//            println(su)
+//        }
+//    })
 }
 

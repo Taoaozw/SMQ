@@ -4,3 +4,10 @@ clusterModel = false
 [address]
 port = 1883
 host = "127.0.0.1"
+
+
+
+[unAckMessage]
+# unack msg reSend time interval
+reSendMs = 5_000
+

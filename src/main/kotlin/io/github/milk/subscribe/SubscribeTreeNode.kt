@@ -1,4 +1,4 @@
-package clive.tea.milk.subscribe
+package io.github.milk.subscribe
 
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.atomic.AtomicReference

@@ -1,7 +1,7 @@
-package clive.tea.milk
+package io.github.milk
 
-import clive.tea.milk.config.*
-import clive.tea.milk.server.*
+import io.github.milk.config.*
+import io.github.milk.server.*
 import io.vertx.core.*
 
 

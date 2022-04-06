@@ -1,4 +1,4 @@
-package clive.tea.milk.subscribe
+package io.github.milk.subscribe
 
 import java.text.ParseException
 
@@ -10,7 +10,7 @@ import java.text.ParseException
  * <a>https://www.zybuluo.com/khan-lau/note/1325300</a>
  *@since 0.0.1
  */
-class Topic(
+data class Topic(
     val name: String,
 ) {
     val tokens: List<Token> = parseTopic()

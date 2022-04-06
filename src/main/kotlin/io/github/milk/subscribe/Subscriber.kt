@@ -1,8 +1,9 @@
-package clive.tea.milk.subscribe
+package io.github.milk.subscribe
 
-import io.netty.handler.codec.mqtt.MqttQoS
+import io.netty.handler.codec.mqtt.*
 import io.vertx.core.json.JsonObject
 import io.vertx.kotlin.core.json.*
+import io.vertx.mqtt.MqttTopicSubscription
 
 /**
  *@author CLIVE
@@ -11,10 +12,11 @@ import io.vertx.kotlin.core.json.*
  *@since 0.0.1
  */
 class Subscriber(
-    val clientId: String,
-    val topic: Topic,
     val qos: MqttQoS,
-    private val connectActorId: String? = null
+    val topic: Topic,
+    val clientId: String,
+    val connectActorId: String,
+    val option: SubscribeOption? = null,
 ) {
 
     var isPersistMsg: Boolean? = null
@@ -30,5 +32,11 @@ class Subscriber(
             put("qos", qos.value())
             put("connectActorId", connectActorId)
         }
+    }
+
+    companion object {
+        fun of(subscription: MqttTopicSubscription, clientId: String, connectActorId: String) =
+            Subscriber(subscription.qualityOfService(), Topic(subscription.topicName()), clientId, connectActorId)
+
     }
 }

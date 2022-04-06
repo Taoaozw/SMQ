@@ -1,4 +1,4 @@
-package clive.tea.milk.config
+package io.github.milk.config
 
 import com.akuleshov7.ktoml.file.*
 import kotlinx.serialization.*
@@ -33,6 +33,12 @@ data class Address(
     val port: Long = 1883,
 
     val host: String = "127.0.0.1"
+)
+
+@Serializable
+data class MqttMsgProperty(
+    // Timed processing time for messages without ACK
+    val unAckMsgProcessPeriod: Long = 1000
 )
 
 internal val host = ConfigManager.property.address.host
